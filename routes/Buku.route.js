@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const BukuController = require("../controller/Buku.controller");
 const upload = require("../middleware/upload");
-const { verifyAccessToken } = require("../helpers/jwt_helper");
+const { verifyAccessToken } = require("../helpers/jwt_helper"); //verifyAccessToken: Middleware ini memastikan bahwa setiap permintaan harus diautentikasi dengan JWT yang valid.
 
 router.get("/", verifyAccessToken, BukuController.getAllBuku);
 
